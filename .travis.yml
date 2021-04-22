@@ -11,6 +11,7 @@ before_install:
   # - docker run ametsoro/docker-react-tuto npm run test -- --coverage
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-react-tuto"
@@ -20,5 +21,6 @@ deploy:
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
+  # secret_access_key:
+  #   secure: "$AWS_SECRET_KEY"
