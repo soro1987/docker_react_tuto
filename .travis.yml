@@ -9,18 +9,17 @@ before_install:
 
 # script:
   # - docker run ametsoro/docker-react-tuto npm run test -- --coverage
-
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  region: "us-east-2"
+  region: "eu-west-3"
   app: "docker-react-tuto"
   env: "Dockerreacttuto-env"
-  bucket_name: "elasticbeanstalk-us-east-2-114194448940"
-  bucket_path: "test-travis-docker-react"
+  bucket_name: "elasticbeanstalk-eu-west-3-114194448940"
+  bucket_path: "docker-react-tuto"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
+  access_key_id: $AWS_ACCESS_KEY2
+  secret_access_key: "$AWS_SECRET_KEY2"
   # secret_access_key:
   #   secure: "$AWS_SECRET_KEY"
